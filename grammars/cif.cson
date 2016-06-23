@@ -1,0 +1,257 @@
+'scopeName': 'source.cif'
+'name': 'CIF Timetable'
+'fileTypes': ['cif']
+'firstLineMatch': '^HD.*$'
+'patterns': [
+    {
+        'name': 'header.cif'
+        'match': '^(HD)(....................)(......)(....)(.......)(.......)(.)(.)(......)(......)(....................)(.*)$'
+        'captures':
+            '1': {'name': 'cifHdRecordIdentity.header.cif'}
+            '2': {'name': 'cifHdFileMainframeIdentity.header.cif'}
+            '3': {'name': 'cifHdDateOfExtract.header.cif'}
+            '4': {'name': 'cifHdTimeOfExtract.header.cif'}
+            '5': {'name': 'cifHdCurrentFileRef.header.cif'}
+            '6': {'name': 'cifHdLastFileRef.header.cif'}
+            '7': {'name': 'cifHdBleedOffUpdateInd.header.cif'}
+            '8': {'name': 'cifHdVersion.header.cif'}
+            '9': {'name': 'cifHdUserExtractStartDate.header.cif'}
+            '10': {'name': 'cifHdUserExtractEndDate.header.cif'}
+            '11': {'name': 'cifHdSpare.header.cif'}
+            '12': {'name': 'error.header.cif'}
+    }
+    {
+        # Split due to max of 17 captures
+        'name': 'basicSchedule.cif'
+        'match': '^(BS)(.)(......)(......)(......)(.......)(.)(.)(..)(....)(....)(.)(........)(.)(...)(....)(...)'
+        'captures':
+            '1': {'name': 'cifBsRecordIdentity.basicSchedule.cif'}
+            '2': {'name': 'cifBsTransactionType.basicSchedule.cif'}
+            '3': {'name': 'cifBsTrainUid.basicSchedule.cif'}
+            '4': {'name': 'cifBsDateRunsFrom.basicSchedule.cif'}
+            '5': {'name': 'cifBsDateRunsTo.basicSchedule.cif'}
+            '6': {'name': 'cifBsDaysRun.basicSchedule.cif'}
+            '7': {'name': 'cifBsBankHolidayRunning.basicSchedule.cif'}
+            '8': {'name': 'cifBsTrainStatus.basicSchedule.cif'}
+            '9': {'name': 'cifBsTrainCategory.basicSchedule.cif'}
+            '10': {'name': 'cifBsTrainIdentity.basicSchedule.cif'}
+            '11': {'name': 'cifBsHeadcode.basicSchedule.cif'}
+            '12': {'name': 'cifBsCourseIndicator.basicSchedule.cif'}
+            '13': {'name': 'cifBsTrainServiceCode.basicSchedule.cif'}
+            '14': {'name': 'cifBsPortionId.basicSchedule.cif'}
+            '15': {'name': 'cifBsPowerType.basicSchedule.cif'}
+            '16': {'name': 'cifBsTimingLoad.basicSchedule.cif'}
+            '17': {'name': 'cifBsSpeed.basicSchedule.cif'}
+    }
+    {
+        # Split due to max of 17 captures
+        'name': 'basicSchedule.cif'
+        'match': '(?<=^BS..........................................................)(......)(.)(.)(.)(.)(....)(....)(.)(.)(.*)$'
+        'captures':
+            '1': {'name': 'cifBsOperatingCharacteristics.basicSchedule.cif'}
+            '2': {'name': 'cifBsTrainClass.basicSchedule.cif'}
+            '3': {'name': 'cifBsSleepers.basicSchedule.cif'}
+            '4': {'name': 'cifBsReservations.basicSchedule.cif'}
+            '5': {'name': 'cifBsConnectionIndicator.basicSchedule.cif'}
+            '6': {'name': 'cifBsCateringCode.basicSchedule.cif'}
+            '7': {'name': 'cifBsServiceBranding.basicSchedule.cif'}
+            '8': {'name': 'cifBsSpare.basicSchedule.cif'}
+            '9': {'name': 'cifBsStpIndicator.basicSchedule.cif'}
+            '10': {'name': 'error.basicSchedule.cif'}
+    }
+    {
+        'name': 'basicScheduleExtraDetail.cif'
+        'match': '^(BX)(....)(.....)(..)(.)(........)(.)(.........................................................)(.*)$'
+        'captures':
+            '1': {'name': 'cifBxRecordIdentity.basicScheduleExtraDetail.cif'}
+            '2': {'name': 'cifBxTractionClass.basicScheduleExtraDetail.cif'}
+            '3': {'name': 'cifBxUicCode.basicScheduleExtraDetail.cif'}
+            '4': {'name': 'cifBxAtocCode.basicScheduleExtraDetail.cif'}
+            '5': {'name': 'cifBxApplicableTimetableCode.basicScheduleExtraDetail.cif'}
+            '6': {'name': 'cifBxReservedFieldRsid.basicScheduleExtraDetail.cif'}
+            '7': {'name': 'cifBxReservedFieldDataSource.basicScheduleExtraDetail.cif'}
+            '8': {'name': 'cifBxSpare.basicScheduleExtraDetail.cif'}
+            '9': {'name': 'error.basicScheduleExtraDetail.cif'}
+    }
+    {
+        'name': 'originLocation.cif'
+        'match': '^(LO)(........)(.....)(....)(...)(...)(..)(..)(............)(..)(.....................................)(.*)$'
+        'captures':
+            '1': {'name': 'cifLoRecordIdentity.originLocation.cif'}
+            '2': {'name': 'cifLoLocation.originLocation.cif'}
+            '3': {'name': 'cifLoScheduledDeparture.originLocation.cif'}
+            '4': {'name': 'cifLoPublicDeparture.originLocation.cif'}
+            '5': {'name': 'cifLoPlatform.originLocation.cif'}
+            '6': {'name': 'cifLoLine.originLocation.cif'}
+            '7': {'name': 'cifLoEngineeringAllowance.originLocation.cif'}
+            '8': {'name': 'cifLoPathingAllowance.originLocation.cif'}
+            '9': {'name': 'cifLoActivity.originLocation.cif'}
+            '10': {'name': 'cifLoPerformanceAllowance.originLocation.cif'}
+            '11': {'name': 'cifLoSpare.originLocation.cif'}
+            '12': {'name': 'error.originLocation.cif'}
+    }
+    {
+        'name': 'intermediateLocation.cif'
+        'match': '^(LI)(........)(.....)(.....)(.....)(....)(....)(...)(...)(...)(............)(..)(..)(..)(....................)(.*)$'
+        'captures':
+            '1': {'name': 'cifLiRecordIdentity.intermediateLocation.cif'}
+            '2': {'name': 'cifLiLocation.intermediateLocation.cif'}
+            '3': {'name': 'cifLiScheduledArrival.intermediateLocation.cif'}
+            '4': {'name': 'cifLiScheduledDeparture.intermediateLocation.cif'}
+            '5': {'name': 'cifLiScheduledPass.intermediateLocation.cif'}
+            '6': {'name': 'cifLiPublicArrival.intermediateLocation.cif'}
+            '7': {'name': 'cifLiPublicDeparture.intermediateLocation.cif'}
+            '8': {'name': 'cifLiPlatform.intermediateLocation.cif'}
+            '9': {'name': 'cifLiLine.intermediateLocation.cif'}
+            '10': {'name': 'cifLiPath.intermediateLocation.cif'}
+            '11': {'name': 'cifLiActivity.intermediateLocation.cif'}
+            '12': {'name': 'cifLiEngineeringAllowance.intermediateLocation.cif'}
+            '13': {'name': 'cifLiPathingAllowance.intermediateLocation.cif'}
+            '14': {'name': 'cifLiPerformanceAllowance.intermediateLocation.cif'}
+            '15': {'name': 'cifLiSpare.intermediateLocation.cif'}
+            '16': {'name': 'error.intermediateLocation.cif'}
+    }
+    {
+        # Split due to max of 17 captures
+        'name': 'changeEnRoute.cif'
+        'match': '^(CR)(........)(..)(....)(....)(.)(........)(.)(...)(....)(...)(......)(.)(.)(.)(.)(....)'
+        'captures':
+            '1': {'name': 'cifCrRecordIdentity.changeEnRoute.cif'}
+            '2': {'name': 'cifCrLocation.changeEnRoute.cif'}
+            '3': {'name': 'cifCrTrainCategory.changeEnRoute.cif'}
+            '4': {'name': 'cifCrTrainIdentity.changeEnRoute.cif'}
+            '5': {'name': 'cifCrHeadcode.changeEnRoute.cif'}
+            '6': {'name': 'cifCrCourseIndicator.changeEnRoute.cif'}
+            '7': {'name': 'cifCrTrainServiceCode.changeEnRoute.cif'}
+            '8': {'name': 'cifCrPortionId.changeEnRoute.cif'}
+            '9': {'name': 'cifCrPowerType.changeEnRoute.cif'}
+            '10': {'name': 'cifCrTimingLoad.changeEnRoute.cif'}
+            '11': {'name': 'cifCrSpeed.changeEnRoute.cif'}
+            '12': {'name': 'cifCrOperatingCharacteristics.changeEnRoute.cif'}
+            '13': {'name': 'cifCrTrainClass.changeEnRoute.cif'}
+            '14': {'name': 'cifCrSleepers.changeEnRoute.cif'}
+            '15': {'name': 'cifCrReservations.changeEnRoute.cif'}
+            '16': {'name': 'cifCrConnectionIndicator.changeEnRoute.cif'}
+            '17': {'name': 'cifCrCateringCode.changeEnRoute.cif'}
+    }
+    {
+        # Split due to max of 17 captures
+        'name': 'changeEnRoute.cif'
+        'match': '(?<=^CR....................................................)(....)(....)(.....)(........)(.....)(.*)$'
+        'captures':
+            '1': {'name': 'cifCrServiceBranding.changeEnRoute.cif'}
+            '2': {'name': 'cifCrTractionClass.changeEnRoute.cif'}
+            '3': {'name': 'cifCrUicCode.changeEnRoute.cif'}
+            '4': {'name': 'cifCrReservedFieldRsid.changeEnRoute.cif'}
+            '5': {'name': 'cifCrSpare.changeEnRoute.cif'}
+            '6': {'name': 'error.changeEnRoute.cif'}
+    }
+    {
+        'name': 'terminatingLocation.cif'
+        'match': '^(LT)(........)(.....)(....)(...)(...)(............)(...........................................)(.*)$'
+        'captures':
+            '1': {'name': 'cifLtRecordIdentity.terminatingLocation.cif'}
+            '2': {'name': 'cifLtLocation.terminatingLocation.cif'}
+            '3': {'name': 'cifLtScheduledArrival.terminatingLocation.cif'}
+            '4': {'name': 'cifLtPublicArrival.terminatingLocation.cif'}
+            '5': {'name': 'cifLtPlatform.terminatingLocation.cif'}
+            '6': {'name': 'cifLtPath.terminatingLocation.cif'}
+            '7': {'name': 'cifLtActivity.terminatingLocation.cif'}
+            '8': {'name': 'cifLtSpare.terminatingLocation.cif'}
+            '9': {'name': 'error.terminatingLocation.cif'}
+    }
+    {
+        'name': 'trainSpecificNote.cif'
+        'match': '^(TN)(.)(.............................................................................)(.*)$'
+        'captures':
+            '1': {'name': 'cifTnRecordIdentity.trainSpecificNote.cif'}
+            '2': {'name': 'cifTnNoteType.trainSpecificNote.cif'}
+            '3': {'name': 'cifTnNote.trainSpecificNote.cif'}
+    }
+    {
+        'name': 'locationSpecificNote.cif'
+        'match': '^(LN)(.)(.............................................................................)(.*)$'
+        'captures':
+            '1': {'name': 'cifLnRecordIdentity.locationSpecificNote.cif'}
+            '2': {'name': 'cifLnNoteType.locationSpecificNote.cif'}
+            '3': {'name': 'cifLnNote.locationSpecificNote.cif'}
+    }
+    {
+        'name': 'association.cif'
+        'match': '^(AA)(.)(......)(......)(......)(......)(.......)(..)(.)(.......)(.)(.)(.)(.)(...............................)(.)(.*)$'
+        'captures':
+            '1': {'name': 'cifAaRecordIdentity.association.cif'}
+            '2': {'name': 'cifAaTransactionType.association.cif'}
+            '3': {'name': 'cifAaMainTrainUid.association.cif'}
+            '4': {'name': 'cifAaAssociatedTrainUid.association.cif'}
+            '5': {'name': 'cifAaAssociationStartDate.association.cif'}
+            '6': {'name': 'cifAaAssociationEndDate.association.cif'}
+            '7': {'name': 'cifAaAssociationDays.association.cif'}
+            '8': {'name': 'cifAaAssociationCategory.association.cif'}
+            '9': {'name': 'cifAaAssociationDateInd.association.cif'}
+            '10': {'name': 'cifAaAssociationLocation.association.cif'}
+            '11': {'name': 'cifAaBaseLocationSuffix.association.cif'}
+            '12': {'name': 'cifAaAssocLocationSuffix.association.cif'}
+            '13': {'name': 'cifAaDiagramType.association.cif'}
+            '14': {'name': 'cifAaAssociationType.association.cif'}
+            '15': {'name': 'cifAaSpare.association.cif'}
+            '16': {'name': 'cifAaStpIndicator.association.cif'}
+            '17': {'name': 'error.association.cif'}
+    }
+    {
+        'name': 'tiplocInsert.cif'
+        'match': '^(TI)(.......)(..)(......)(.)(..........................)(.....)(....)(...)(................)(........)(.*)$'
+        'captures':
+            '1': {'name': 'cifTiRecordIdentity.tiplocInsert.cif'}
+            '2': {'name': 'cifTiTiplocCode.tiplocInsert.cif'}
+            '3': {'name': 'cifTiCapitalsIdentification.tiplocInsert.cif'}
+            '4': {'name': 'cifTiNalco.tiplocInsert.cif'}
+            '5': {'name': 'cifTiNlcCheckCharacter.tiplocInsert.cif'}
+            '6': {'name': 'cifTiTpsDescription.tiplocInsert.cif'}
+            '7': {'name': 'cifTiStanox.tiplocInsert.cif'}
+            '8': {'name': 'cifTiPoMcpCode.tiplocInsert.cif'}
+            '9': {'name': 'cifTiCrsCode.tiplocInsert.cif'}
+            '10': {'name': 'cifTiSixteenCharacterDescription.tiplocInsert.cif'}
+            '11': {'name': 'cifTiSpare.tiplocInsert.cif'}
+            '12': {'name': 'error.tiplocInsert.cif'}
+    }
+    {
+        'name': 'tiplocAmend.cif'
+        'match': '^(TA)(.......)(..)(......)(.)(..........................)(.....)(....)(...)(................)(.......)(.)(.*)$'
+        'captures':
+            '1': {'name': 'cifTaRecordIdentity.tiplocAmend.cif'}
+            '2': {'name': 'cifTaTiplocCode.tiplocAmend.cif'}
+            '3': {'name': 'cifTaCapitalsIdentification.tiplocAmend.cif'}
+            '4': {'name': 'cifTaNalco.tiplocAmend.cif'}
+            '5': {'name': 'cifTaNlcCheckCharacter.tiplocAmend.cif'}
+            '6': {'name': 'cifTaTpsDescription.tiplocAmend.cif'}
+            '7': {'name': 'cifTaStanox.tiplocAmend.cif'}
+            '8': {'name': 'cifTaPoMcpCode.tiplocAmend.cif'}
+            '9': {'name': 'cifTaCrsCode.tiplocAmend.cif'}
+            '10': {'name': 'cifTaSixteenCharacterDescription.tiplocAmend.cif'}
+            '11': {'name': 'cifTaNewTiploc.tiplocAmend.cif'}
+            '12': {'name': 'cifTaSpare.tiplocAmend.cif'}
+            '13': {'name': 'error.tiplocAmend.cif'}
+    }
+    {
+        'name': 'tiplocDelete.cif'
+        'match': '^(TD)(.......)(.......................................................................)(.*)$'
+        'captures':
+            '1': {'name': 'cifTdRecordIdentity.tiplocDelete.cif'}
+            '2': {'name': 'cifTdTiplocCode.tiplocDelete.cif'}
+            '3': {'name': 'cifTdSpare.tiplocDelete.cif'}
+            '4': {'name': 'error.tiplocDelete.cif'}
+    }
+    {
+        'name': 'trailer.cif'
+        'match': '^(ZZ)(..............................................................................)(.*)$'
+        'captures':
+            '1': {'name': 'cifZzRecordIdentity.trailer.cif'}
+            '2': {'name': 'cifZzSpare.trailer.cif'}
+            '3': {'name': 'error.trailer.cif'}
+    }
+    {
+        'name': 'invalid.cif'
+        'match': '^.*$'
+    }
+]

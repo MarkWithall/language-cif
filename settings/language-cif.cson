@@ -1,0 +1,3 @@
+'.source.cif':
+    whitespace:
+        removeTrailingWhitespace: false

@@ -1,0 +1,16 @@
+{
+    "name": "language-cif",
+    "version": "0.0.0",
+    "description": "Syntax highlighting for CIF timetable files",
+    "engines": {
+        "atom": "*"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/markwithall/language-cif.git"
+    },
+    "bugs": {
+        "url": "https://github.com/markwithall/language-cif/issues"
+    },
+    "license": "MIT"
+}

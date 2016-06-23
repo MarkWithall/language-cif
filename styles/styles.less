@@ -1,0 +1,134 @@
+atom-text-editor::shadow {
+    .cif {
+        @odd: #EEEEEE;
+        @even: #CCCCCC;
+        @bsOdd: #EEEEFF;
+        @bsEven: #CCCCFF;
+        @loOdd: #EEFFEE;
+        @loEven: #CCFFCC;
+        @ltOdd: #FFEEEE;
+        @ltEven: #FFCCCC;
+        @crOdd: #FFFFEE;
+        @crEven: #FFFFCC;
+        @error: #FF0000;
+
+        color: black;
+
+        .header {
+            background-color: @odd;
+            .cifHdFileMainframeIdentity {background-color: @even;}
+            .cifHdTimeOfExtract {background-color: @even;}
+            .cifHdLastFileRef.header.cif {background-color: @even;}
+            .cifHdVersion.header.cif {background-color: @even;}
+            .cifHdUserExtractEndDate.header.cif {background-color: @even;}
+        }
+        .basicSchedule {
+            background-color: @bsOdd;
+            .cifBsTransactionType {background-color: @bsEven;}
+            .cifBsDateRunsFrom {background-color: @bsEven;}
+            .cifBsDaysRun {background-color: @bsEven;}
+            .cifBsTrainStatus {background-color: @bsEven;}
+            .cifBsCourseIndicator {background-color: @bsEven;}
+            .cifBsPortionId {background-color: @bsEven;}
+            .cifBsTimingLoad {background-color: @bsEven;}
+            .cifBsOperatingCharacteristics {background-color: @bsEven;}
+            .cifBsSleepers {background-color: @bsEven;}
+            .cifBsConnectionIndicator {background-color: @bsEven;}
+            .cifBsServiceBranding {background-color: @bsEven;}
+            .cifBsStpIndicator {background-color: @bsEven;}
+        }
+        .basicScheduleExtraDetail {
+            background-color: @odd;
+            .cifBxTractionClass {background-color: @even;}
+            .cifBxAtocCode {background-color: @even;}
+            .cifBxReservedFieldRsid {background-color: @even;}
+            .cifBxSpare {background-color: @even;}
+        }
+        .originLocation {
+            background-color: @loOdd;
+            .cifLoLocation {background-color: @loEven;}
+            .cifLoPublicDeparture {background-color: @loEven;}
+            .cifLoLine {background-color: @loEven;}
+            .cifLoPathingAllowance {background-color: @loEven;}
+            .cifLoPerformanceAllowance {background-color: @loEven;}
+        }
+        .intermediateLocation {
+            background-color: @odd;
+            .cifLiLocation {background-color: @even;}
+            .cifLiScheduledDeparture {background-color: @even;}
+            .cifLiPublicArrival {background-color: @even;}
+            .cifLiPlatform {background-color: @even;}
+            .cifLiPath {background-color: @even;}
+            .cifLiEngineeringAllowance {background-color: @even;}
+            .cifLiPerformanceAllowance {background-color: @even;}
+        }
+        .changeEnRoute {
+            background-color: @crOdd;
+            .cifCrLocation {background-color: @crEven;}
+            .cifCrTrainIdentity {background-color: @crEven;}
+            .cifCrLocation {background-color: @crEven;}
+            .cifCrCourseIndicator {background-color: @crEven;}
+            .cifCrPortionId {background-color: @crEven;}
+            .cifCrTimingLoad {background-color: @crEven;}
+            .cifCrOperatingCharacteristics {background-color: @crEven;}
+            .cifCrSleepers {background-color: @crEven;}
+            .cifCrConnectionIndicator {background-color: @crEven;}
+            .cifCrServiceBranding {background-color: @crEven;}
+            .cifCrUicCode {background-color: @crEven;}
+            .cifCrSpare {background-color: @crEven;}
+        }
+        .terminatingLocation {
+            background-color: @ltOdd;
+            .cifLtLocation {background-color: @ltEven;}
+            .cifLtPublicArrival {background-color: @ltEven;}
+            .cifLtPath {background-color: @ltEven;}
+            .cifLtSpare {background-color: @ltEven;}
+        }
+        .trainSpecificNote {
+            background-color: @odd;
+            .cifTnNoteType {background-color: @even;}
+        }
+        .locationSpecificNote {
+            background-color: @odd;
+            .cifLnNoteType {background-color: @even;}
+        }
+        .association {
+            background-color: @odd;
+            .cifAaTransactionType {background-color: @even;}
+            .cifAaAssociatedTrainUid {background-color: @even;}
+            .cifAaAssociationEndDate {background-color: @even;}
+            .cifAaAssociationCategory {background-color: @even;}
+            .cifAaAssociationLocation {background-color: @even;}
+            .cifAaAssocLocationSuffix {background-color: @even;}
+            .cifAaAssociationType {background-color: @even;}
+            .cifAaStpIndicator {background-color: @even;}
+        }
+        .tiplocInsert {
+            background-color: @odd;
+            .cifTiTiplocCode {background-color: @even;}
+            .cifTiNalco {background-color: @even;}
+            .cifTiTpsDescription {background-color: @even;}
+            .cifTiPoMcpCode {background-color: @even;}
+            .cifTiSixteenCharacterDescription {background-color: @even;}
+        }
+        .tiplocAmend {
+            background-color: @odd;
+            .cifTaTiplocCode {background-color: @even;}
+            .cifTaNalco {background-color: @even;}
+            .cifTaTpsDescription {background-color: @even;}
+            .cifTaPoMcpCode {background-color: @even;}
+            .cifTaSixteenCharacterDescription {background-color: @even;}
+            .cifTaSpare {background-color: @even;}
+        }
+        .tiplocDelete {
+            background-color: @odd;
+            .cifTdTiplocCode {background-color: @even;}
+        }
+        .trailer {
+            background-color: @odd;
+            .cifZzSpare {background-color: @even;}
+        }
+        .error {color: @error;}
+        .invalid {color: @error;}
+    }
+}
